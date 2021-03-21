@@ -136,7 +136,7 @@ function Timer() {
             );
             const secondsTime = Math.floor((timeLeft % (1000 * 60)) / 1000);
             if (timeLeft < 0) {
-                clearInterval(inerval.current);
+                clearInterval(inerval);
             } else {
                 setSeconds(secondsTime);
                 setMinutes(minutesTime);
@@ -149,7 +149,7 @@ function Timer() {
     useEffect(() => {
         handleTimer();
         return () => {
-            clearInterval(inerval.current);
+            clearInterval(inerval);
         };
     }, []);
     return (
